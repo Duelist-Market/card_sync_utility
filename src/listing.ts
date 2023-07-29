@@ -3,12 +3,13 @@ import * as fs from "fs";
 import * as path from "path";
 import ProgressBar from "progress";
 
-export async function downloadListing() {
+async function downloadListing() {
   const apiURL = process.env["YGO_API_URL"];
 
   try {
-    const { data, headers } = await axios({
+    const { data } = await axios({
       url: apiURL,
+      params: { format: "TCG" },
       method: "GET",
       responseType: "stream",
     });
@@ -40,3 +41,5 @@ export async function downloadListing() {
     console.error(error);
   }
 }
+
+downloadListing();
