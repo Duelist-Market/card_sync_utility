@@ -14,20 +14,20 @@ CREATE TABLE sub_type(
 
 
 /* Monster Sub Types */
-INSERT INTO sub_type(name) VALUES ('normal');
-INSERT INTO sub_type(name) VALUES ('effect');
-INSERT INTO sub_type(name) VALUES ('flip');
-INSERT INTO sub_type(name) VALUES ('fusion');
-INSERT INTO sub_type(name) VALUES ('toon');
-INSERT INTO sub_type(name) VALUES ('tuner');
-INSERT INTO sub_type(name) VALUES ('union');
-INSERT INTO sub_type(name) VALUES ('gemini');
-INSERT INTO sub_type(name) VALUES ('spirit');
-INSERT INTO sub_type(name) VALUES ('ritual');
-INSERT INTO sub_type(name) VALUES ('synchro');
-INSERT INTO sub_type(name) VALUES ('xyz');
-INSERT INTO sub_type(name) VALUES ('pendulum');
-INSERT INTO sub_type(name) VALUES ('link');
+INSERT INTO subtype(name) VALUES ('normal');
+INSERT INTO subtype(name) VALUES ('effect');
+INSERT INTO subtype(name) VALUES ('flip');
+INSERT INTO subtype(name) VALUES ('fusion');
+INSERT INTO subtype(name) VALUES ('toon');
+INSERT INTO subtype(name) VALUES ('tuner');
+INSERT INTO subtype(name) VALUES ('union');
+INSERT INTO subtype(name) VALUES ('gemini');
+INSERT INTO subtype(name) VALUES ('spirit');
+INSERT INTO subtype(name) VALUES ('ritual');
+INSERT INTO subtype(name) VALUES ('synchro');
+INSERT INTO subtype(name) VALUES ('xyz');
+INSERT INTO subtype(name) VALUES ('pendulum');
+INSERT INTO subtype(name) VALUES ('link');
 
 
 CREATE TABLE monster_type(
@@ -108,5 +108,5 @@ CREATE TABLE card_sub_type(
     sub_type VARCHAR(50) NOT NULL,
     PRIMARY KEY (card_id, sub_type),
     FOREIGN KEY (card_id) REFERENCES card(id),
-    FOREIGN KEY (sub_type) REFERENCES sub_type(name)
+    FOREIGN KEY (subtype) REFERENCES subtype(name)
 );
